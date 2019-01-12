@@ -16,26 +16,9 @@ Assim como no livro (ibd, p. 291 e 296), neste estudo pressupõem-se
     - pois se assume um certo grau de capacidade ociosa, e assim sendo, pode se empregar mais ou 
       empregar menos a depender do nível de demanda (ibd, p. 292).
 
+## Exemplo
 
-## Derivações
+Segue abaixo um exemplo do modelo.
 
-Para a derivação do gráfico abaixo, assim como dos resultados numéricos, segue-se as equações como apresentada no livro de Lavoie. Entre parenteses encontra-se os índices das equações como expostas no livro.
 
-Demanda Agregada (Eq. 5.2):
-
-- $AD = wL + A = wL + ap$
-
-Oferta Agregada (Eq. 5.14):
-
-- $AS = pq^s = pLy$
-
-Salário Real (Eq. 5.15):
-
-- ${(\frac{w}{p})}_{eff} = y - \frac{a}{L}$
-
-Função de emprego (Eq. 5.17, derivada da Eq. 5.15):
-
-- $L^{d}_{eff} = \frac{a}{y - \frac{w}{p}}$, 
-
-onde $L$ = nível de emprego, $w$ = salário nominal, $a$ = gasto autônomo (real), 
-$y$ = produtividade dos trabalhadores e $p$ = nível de preços.
+![](readmeIMG.png)
