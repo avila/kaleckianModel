@@ -67,7 +67,7 @@ $y$ = produtividade dos trabalhadores e $p$ = nível de preços.
 
 
 ```{r shiny, echo = FALSE}
-shinyAppDir("kaleckianModel",
+shinyAppDir("shinyAppKalecki",
   options=list(
     width="110%",
     height=770
