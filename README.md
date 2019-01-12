@@ -18,7 +18,6 @@ Assim como no livro (ibd, p. 291 e 296), neste estudo pressupõem-se
 
 ## Exemplo
 
-Segue abaixo um exemplo do modelo.
-
+[Clique aqui](https://mavila.shinyapps.io/Kalecki/) para testar versão interativa do modelo.
 
 ![](readmeIMG.png)
