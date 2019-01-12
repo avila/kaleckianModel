@@ -1,0 +1,112 @@
+---
+title: "Modelo Kaleckiano Interativo"
+author: "Marcelo Avila"
+date: "Primeiro Semestre de 2018"
+output:
+  html_document:
+    theme: cosmo
+    toc: yes
+    toc_depth: 2
+runtime: shiny
+resource_files:
+- kaleckianModel/server.R
+- kaleckianModel/ui.R
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, self_contained = F)
+```
+
+
+```{r warning=FALSE, include=FALSE}
+library(shiny)
+library(shinyjs)
+```
+
+## Introdução
+
+Este exercício tem como objetivo demonstrar o mecanismo de reação a choques exógenos da versão Kaleckiana do modelo macroeconômico, com enfoque no mercado de trabalho, fundamentada na escola pós-Keynesiana como apresentado por Lavoie (2014, Cap. 5.3, p. 291 - 315). 
+
+Assim como no livro (ibd, p. 291 e 296), neste estudo pressupõem-se  
+
+- uma economia fechada
+- e sem governo,
+- investimento como único gasto autônomo,
+- assalariados consomem a renda em sua totalidade,
+- inexistência de estoques,
+- custo marginal constante (até atingir a plena capacidade),
+- coeficientes técnicos de produção constantes,
+- trabalho e capital não substituíveis,
+- nível de emprego flexível até no curto prazo,
+    - pois se assume um certo grau de capacidade ociosa, e assim sendo, pode se empregar mais ou 
+      empregar menos a depender do nível de demanda (ibd, p. 292).
+
+
+## Derivações
+
+Para a derivação do gráfico abaixo, assim como dos resultados numéricos, segue-se as equações como apresentada no livro de Lavoie. Entre parenteses encontra-se os índices das equações como expostas no livro.
+
+Demanda Agregada (Eq. 5.2):
+
+- $AD = wL + A = wL + ap$
+
+Oferta Agregada (Eq. 5.14):
+
+- $AS = pq^s = pLy$
+
+Salário Real (Eq. 5.15):
+
+- ${(\frac{w}{p})}_{eff} = y - \frac{a}{L}$
+
+Função de emprego (Eq. 5.17, derivada da Eq. 5.15):
+
+- $L^{d}_{eff} = \frac{a}{y - \frac{w}{p}}$, 
+
+onde $L$ = nível de emprego, $w$ = salário nominal, $a$ = gasto autônomo (real), 
+$y$ = produtividade dos trabalhadores e $p$ = nível de preços.
+
+
+```{r shiny, echo = FALSE}
+shinyAppDir("kaleckianModel",
+  options=list(
+    width="110%",
+    height=770
+  )
+)
+```
+
+
+### Como Usar o modelo
+
+1. Ajuste a variável de interesse e
+2. Clique no título da variável para retorná-la ao nível inicial.
+
+
+## Perguntas Adicionais (P1)
+
+
+### Pergunta quatro: O modelo tri-departamental 
+
+| D1    | D2    | D3    | TOTAL
+| ----- | ----- | ----- | -----
+| $P_1$ | $P_2$ | $P_3$ | P    
+| $W_1$ | $W_2$ | $W_3$ | W     
+| $I$   | $C_K$ | $C_W$ | Y     
+
+Assumindo que o gasto autônomo ($a = I + C_K$) permanece constante, a massa de lucro também permaneceria em seu nível inicial, porém, o aumento do salário real teria efeitos distributivos, segundo o modelo Kaleckiano. Assumindo que os assalariados consumam 100 por cento da renda disponível ($W = C_W$), o lucro do $D3$ pode ser definido como $W_1 + W_2$. Assim sendo, o Terceiro Departamento abocanharia a perda dos lucros dos Departamentos Um e Dois, ocasionada pelo aumento dos salários nestes setores ($W_1$ e $W_2$). 
+
+Como é visível no gráfico interativo, o aumento real dos salários resultaria em um aumento no nível de emprego (ceteris paribus). Pois partindo do pressuposto de que exista capacidade ociosa, as firmas ajustariam o nível de produção contratando novos empregados para atender a demanda proveniente da acrescida massa salarial total. 
+
+Os capitalistas dos departamentos um e dois sofreriam uma pressão para repassar para os preços o aumento dos salários, de modo a não perder parte dos lucros que costumavam obter. Os capitalistas do terceiro departamento certamente não teriam muito do que reclamar, mas, de um modo geral, a classe capitalista perderia espaço relativo na renda total, mesmo mantendo constante o nível de lucros em termos absolutos. Essa perda relativa poderia gerar uma sensação de *empobrecimento* relativo aos trabalhadores, e por consequência, insatisfação da classe capitalista.
+
+
+### Pergunta dois: Target-return Pricing
+
+O *target-return pricing* é uma das formas como a firma precifica os bens produzidos se orientando pelos custos diretos e indiretos de produção correspondentes a um nível padrão de produção (Lavoie, p. 162). Basicamente, aplica-se uma taxa adicional (*mark-up*) aos custos de produção unitário de modo a cobrir os custos de produção e obtenção dos lucros esperados, como em
+
+$p = (1 + \Theta) NUC$,
+
+onde $p$ é preço, $\Theta$ a margem (*mark-up*) e $NUC$ o custo unitário normal. O $NUC$ inclui os custos diretos (variáveis) e indiretos (gastos gerais incluindo administração, transporte, supervisão etc.) e são calculados baseando-se em um nível normal (padrão) de produção.
+
+A vantagem deste método sobre outros *cost-plus pricing* é que as firmas podem tomar uma decisão fundamentada sobre quanto deve ser a taxa de *mark-up*, tendo como objetivo uma meta de lucros proporcional ao custo do capital investido, levando em consideração também a capacidade utilizada (Lavoie Eq. 3.22, p. 163). 
+Esta metodologia se mostra bastante realista, pois as firmas podem através dela comparar os ganhos esperados de diferentes projetos assim como o retorno esperado de um investimento seguro, como títulos públicos, e também outros ativos financeiros. Assim sendo, a firma pode escolher o investimento de maior rendimento (ou menor risco), dada as condições e previsões de cada projeto assim como a aversão a risco dos agentes. 
